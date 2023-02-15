@@ -1,0 +1,43 @@
+body {
+    background-color: burlywood;
+}
+
+nav {
+    height: 10vh;
+    text-align: center;
+}
+
+.left, .right {
+    height: 80vh;
+    width: 20vw;
+    text-align: center;
+    display: flex;
+    background-color: brown;
+}
+
+.center {
+    background-color: aliceblue;
+    width: 65%;
+}
+
+.row {
+    display: flex;
+    height: 26vh;
+    border: 1px solid black;
+    justify-content: center;
+}
+
+.square {
+    border: 1px solid black;
+    width: 33%;
+    text-align: center;
+    font-size: 5em;
+}
+
+main {
+    display: flex;
+}
+
+footer {
+    height: 5vh;
+}
