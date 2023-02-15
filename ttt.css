@@ -5,6 +5,7 @@ body {
 nav {
     height: 10vh;
     text-align: center;
+    background-color: chocolate;
 }
 
 .left, .right {
@@ -40,4 +41,12 @@ main {
 
 footer {
     height: 5vh;
+    display: flex;
+    justify-content: center;
+    background-color: chartreuse;
+}
+
+h4 {
+    text-align: center;
+    margin-bottom: 10%;
 }
