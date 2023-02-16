@@ -66,9 +66,11 @@ for(let i = 0; i < squares.length; i++) {
         if(!squares[i].innerText){
             if(player === 'X') {
                 squares[i].innerHTML = "X";
+                squares[i].style.color = "rgb(181, 74, 74)"
                 player = "O";
             } else {
                 squares[i].innerHTML = "O";
+                squares[i].style.color = "rgb(66, 79, 174)"
                 player = "X";
             }
             updateSquareValues();
