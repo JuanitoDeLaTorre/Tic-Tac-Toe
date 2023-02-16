@@ -14,6 +14,7 @@ const squares = document.querySelectorAll('.square');
 const reset = document.querySelector(".reset")
 const check = document.querySelector(".check")
 const xWins = document.querySelector(".xWins")
+const catGames = document.querySelector(".catsGames")
 const xDOM = document.querySelector(".X")
 const oDOM = document.querySelector(".O")
 
@@ -34,6 +35,7 @@ console.log(squareValues)
 
 let xWinsCount = 0;
 let oWinsCount = 0;
+let catGamesWins = 0;
 
 
 // Initialize player
@@ -109,24 +111,42 @@ function updateSquareValues() {
 }
 
 function resetBoard() {
-    squares.forEach((square)=> {
-        square.innerHTML = ""
-    })
-    squareValues[0][0] = "";
-    squareValues[0][1] = "";
-    squareValues[0][2] = "";
-    squareValues[1][0] = "";
-    squareValues[1][1] = "";
-    squareValues[1][2] = "";
-    squareValues[2][0] = "";
-    squareValues[2][1] = "";
-    squareValues[2][2] = "";
+    setTimeout(()=> {
+        squares.forEach((square)=> {
+            square.innerHTML = ""
+        })
+        squareValues[0][0] = "";
+        squareValues[0][1] = "";
+        squareValues[0][2] = "";
+        squareValues[1][0] = "";
+        squareValues[1][1] = "";
+        squareValues[1][2] = "";
+        squareValues[2][0] = "";
+        squareValues[2][1] = "";
+        squareValues[2][2] = "";
+    },2000)
+    
 }
 
 
-
 function checkDone (arr) {
-    console.log("CHECKING!")
+
+    let catsGame = false;
+    let fullRows = 0
+
+    squareValues.forEach((row) => {
+        if(!row.includes('')) {
+            fullRows++
+            // catsGame = true
+        } 
+    })
+
+    console.log(fullRows)
+    if(fullRows === 3) {
+        addWins("cat")
+        resetBoard()
+        return
+    }
 
     //check rows
     for(let i = 0; i < squareValues.length;i++){
@@ -161,15 +181,19 @@ function checkDone (arr) {
         resetBoard()
         return;
     }
+    
 }
 
 function addWins(type) {
     if(type === "X") {
         xWinsCount++
         xDOM.innerText = xWinsCount
-    } else {
+    } else if (type === "O") {
         oWinsCount++
         oDOM.innerText = oWinsCount 
+    } else if (type === "cat") {
+        catGamesWins++
+        catGames.innerText = catGamesWins
     }
 }
 
