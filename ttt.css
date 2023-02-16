@@ -1,11 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
 body {
-    background-color: burlywood;
+    background-color: rgb(48, 48, 48);
+    font-family: "Comfortaa";
 }
 
 nav {
+    display: flex;
     height: 10vh;
-    text-align: center;
-    background-color: chocolate;
+    padding-top: 20px;
+    align-content: center;
+    justify-content: center;
+    background: linear-gradient(90deg, rgba(53,70,68,1) 0%, rgba(52,66,121,1) 50%, rgba(22,31,34,1) 100%);
+    color: white;
 }
 
 .left, .right {
@@ -13,8 +20,18 @@ nav {
     width: 20vw;
     text-align: center;
     display: flex;
-    background-color: brown;
+    background-color: #A8B1FF;
+    /* margin: 30px; */
 }
+
+.left {
+    padding-top: 20px;
+}
+
+h2 {
+    border-bottom: solid black 2px;
+}
+
 
 .center {
     background-color: aliceblue;
@@ -53,4 +70,16 @@ footer {
 h4 {
     text-align: center;
     margin-bottom: 10%;
+}
+
+ol > h3 {
+    border-bottom: solid black 2px;
+}
+
+.scoreboard {
+    margin-left: 50px;
+}
+
+ol {
+    padding-right: 30px;
 }
